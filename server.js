@@ -8,6 +8,11 @@ const PORT = process.env.PORT || 4002;
 
 const db = require("./models");
 
+const bodyParser=require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+require("./routes/student.routes")(app);
+
 db.mongoose
   .connect(db.url)
   .then(() => {
