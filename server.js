@@ -4,14 +4,14 @@ const app = express();
 
 const logger = require("morgan");
 
-const PORT = process.env.PORT || 4002;
+const PORT = process.env.PORT || 4002; 
 
 const db = require("./models");
 
 const bodyParser=require("body-parser");
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({extended:true}));
-require("./routes/student.routes")(app);
+require("./routes/app.routes")(app);
 
 db.mongoose
   .connect(db.url)
@@ -25,8 +25,11 @@ db.mongoose
 
 app.use(logger("dev"));
 
+
+
+
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to glsi students application." });
+  res.json({ message: "Welcome to glsi movie application." });
 });
 
 app.listen(PORT, () => {

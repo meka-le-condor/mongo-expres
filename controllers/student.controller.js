@@ -1,9 +1,9 @@
     const db = require("../models");
     const Student = db.students;
 
-    exports.create = function (req, res) {
+ exports.create = function (req, res) {
     // Validate request
-            if (!req.body.name) {
+            if (!req.body ) {
             res.status(400).send({ message: "Content can not be empty!" });
             return;
             }

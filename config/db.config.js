@@ -1,3 +1,3 @@
 module.exports = {
-  url: "mongodb://127.0.0.1:27017/glsi_db_meka",
+  url: "mongodb+srv://meka:meka@meka.thneato.mongodb.net/glsi_db_meka",
 };
